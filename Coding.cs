@@ -1,9 +1,8 @@
-namespace coding_tracker
+namespace coding_tracker;
+
+internal class Coding
 {
-    internal class Coding
-    {
-        public int Id { get; set; }
-        public string Date { get; set; }
-        public string Duration { get; set;  }
-    }
+    public int Id { get; set; }
+    public string Date { get; set; }
+    public string Duration { get; set;  }
 }

@@ -1,19 +1,17 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 
-namespace coding_tracker
+namespace coding_tracker;
+
+class Program
 {
-    class Program
+    static string connectionString = ConfigurationManager.AppSettings.Get("ConnectionString");
+
+    static void Main(string[] args)
     {
-        static string connectionString = ConfigurationManager.AppSettings.Get("ConnectionString");
+        DatabaseManager databaseManager = new();
+        GetUserInput getUserInput = new();
 
-        static void Main(string[] args)
-        {
-            DatabaseManager databaseManager= new();
-            GetUserInput getUserInput = new();
-
-            databaseManager.CreateTable(connectionString);
-            getUserInput.MainMenu();
-        }
+        databaseManager.CreateTable(connectionString);
+        getUserInput.MainMenu();
     }
 }
